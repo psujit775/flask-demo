@@ -26,8 +26,8 @@ async def webhook():
         if query_result.get('action') == 'input.unknown':
 
             response = await openai.Completion.create(
-                model="davinci:ft-personal-2022-08-20-13-32-16",
-                prompt="The following is a conversation with a therapist and a user. The therapist is JOY, who uses compassionate listening to have helpful and meaningful conversations with users. JOY is empathic and friendly. JOY's objective is to make the user feel better by feeling heard. With each response, JOY offers follow-up questions to encourage openness and tries to continue the conversation in a natural way. \n\nJOY-> Hello, I am your personal mental health assistant. What's on your mind today?\nUser->"+query+"JOY->",
+                model="davinci:ft-personal-2023-04-04-17-05-17",
+                prompt="The following is a conversation with an AI assistant that can have meaningful conversations with users. The assistant is helpful, pediatric specialist, and friendly. Its objective is to parents with their new borns. With each response, the AI assisstant prompts the user to continue the conversation in a natural way. sonpari is empathic and friendly. sonpari's objective is to help parents with their new born childers, sonpari offers follow-up questions to encourage openness and tries to continue the conversation in a natural way. \n\nSonpari-> Hello, I am your personal pediatrician assistant. How can i help you today?\nUser->"+query+"Sonpari->",
                 temperature=0.89,
                 max_tokens=162,
                 top_p=1,
