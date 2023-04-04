@@ -15,10 +15,12 @@ def hello_world(
 @app.route('/webhook', methods=['POST'])
 async def webhook():
     try:
+        print("i'm start of webhook")
         req = request.get_json(silent=True, force=True)
         fulfillmentText = 'you said'
         query_result = req.get('queryResult')
         query = query_result.get('queryText')
+        print("query result============")
         print(query_result)
         start_sequence = "\nSonpari->"
         restart_sequence = "\nUser->"
@@ -46,6 +48,9 @@ async def webhook():
         }
         return '200'
     except Exception as e:
+        print("i'm exception==============")
+        print(query_result)
+        print("i'm exception==============")
         print('error',e)
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
