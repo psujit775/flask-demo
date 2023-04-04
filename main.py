@@ -19,8 +19,8 @@ async def webhook():
         fulfillmentText = 'you said'
         query_result = req.get('queryResult')
         query = query_result.get('queryText')
-
-        start_sequence = "\nJOY->"
+        print(query_result)
+        start_sequence = "\nSonpari->"
         restart_sequence = "\nUser->"
 
         if query_result.get('action') == 'input.unknown':
